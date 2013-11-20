@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Unitimes::Application.config.secret_key_base = 'ec1a30439bf7c2f483e6e692f1fed05eda85ad884dd34cabeca5f2cdb68e8725dca316072a0161f8a0f1061851ced82d7ed86748699a114188ba7a63a97d92ea'
+Unitimes::Application.config.secret_key_base = 'c308e32416dcaff63dcd19edaea606a123ff29607f5de4fec1c666c831b96a5e776bfd0ca12873cf3fbc6893d93de2389b954000fdb6e36cbca0af1109b06a85'
