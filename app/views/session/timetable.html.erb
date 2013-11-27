@@ -1,0 +1,59 @@
+<%= render :partial => "header", :locals => { :current_page => 'timetable' } %>
+
+<div class="container">
+  <div class="btn-toolbar pull-right" role="toolbar" style="margin-top: 1.5em">
+    <button class="btn btn-info">Группы</button>
+    <button class="btn btn-info">Испытания</button>
+  </div>
+  
+  <h1>Зимняя промежуточная аттестация 2013/2014 года</h1>
+  <h3>1 курс, Бакалавриат, Очная, 032700 «Филология», профиль «Английский язык и литература»</h3>
+  
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab">Зачеты</a></li>
+    <li><a href="#tab2" data-toggle="tab">Пересдача зачетов</a></li>
+    <li><a href="#tab3" data-toggle="tab">Комиссии по зачетам</a></li>
+    <li><a href="#tab4" data-toggle="tab">Экзамены</a></li>
+    <li><a href="#tab5" data-toggle="tab">Пересдачи экзаменов</a></li>
+    <li><a href="#tab6" data-toggle="tab">Комиссии по экзаменам</a></li>
+  </ul>
+  
+  <!-- Tab panes -->
+  <div class="tab-content">
+  <% (1..6).each do |t| %>
+    <div class="tab-pane<% if 1 == t %> active<% end %>" id="tab<%=t %>">
+    <% (1..4).each do |g| %>
+      <h3><%=t %><%=g %>а группа</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th class="text-center">№</th>
+            <th>Дисциплина</th>
+            <th>Преподаватель</th>
+            <th>Дата</th>
+            <th>Время</th>
+            <th>Аудитория</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+        <% (1..5).each do |e| %>
+          <tr>
+            <td class="text-center"><%=e %></td>
+            <td>Культурное пространство Санкт-Петебурга</td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    <% end %>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+<%= render :partial => "footer" %>

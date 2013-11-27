@@ -1,0 +1,108 @@
+<%= render :partial => "header", :locals => { :current_page => 'tests' } %>
+
+<div class="container">
+  <h1>Зимняя промежуточная аттестация 2013/2014 года</h1>
+  <h3>1 курс, Бакалавриат, Очная, 032700 «Филология», профиль «Английский язык и литература»</h3>
+  
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th class="text-center">№</th>
+        <th>Дисциплина</th>
+        <th class="text-center">Зачет</th>
+        <th class="text-center">Пересдача</th>
+        <th class="text-center">Комиссия</th>
+        <th class="text-center">Экзамен</th>
+        <th class="text-center">Пересдача</th>
+        <th class="text-center">Комиссия</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <tr>
+        <td class="text-center">1</td>
+        <td>Культурное пространство Санкт-Петербурга</td>
+        <td class="text-center"><span class="glyphicon glyphicon-ok"></span></td>
+        <td class="text-center"></td>
+        <td class="text-center"></td>
+        <td class="text-center"><span class="glyphicon glyphicon-ok"></span></td>
+        <td class="text-center"></td>
+        <td class="text-center"></td>
+      </tr>
+      <tr>
+        <td class="text-center">2</td>
+        <td>Русский язык</td>
+        <td class="text-center"></td>
+        <td class="text-center"></td>
+        <td class="text-center"></td>
+        <td class="text-center"><span class="glyphicon glyphicon-ok"></span></td>
+        <td class="text-center"><span class="glyphicon glyphicon-ok"></span></td>
+        <td class="text-center"></td>
+      </tr>
+      <tr>
+        <td class="text-center">3</td>
+        <td>Английский язык</td>
+        <td class="text-center"></td>
+        <td class="text-center"><span class="glyphicon glyphicon-ok"></span></td>
+        <td class="text-center"></td>
+        <td class="text-center"><span class="glyphicon glyphicon-ok"></span></td>
+        <td class="text-center"></td>
+        <td class="text-center"><span class="glyphicon glyphicon-ok"></span></td>
+      </tr>
+      <tr>
+        <td class="text-center">4</td>
+        <td>Страноведение</td>
+        <td class="text-center"><span class="glyphicon glyphicon-ok"></span></td>
+        <td class="text-center"><span class="glyphicon glyphicon-ok"></span></td>
+        <td class="text-center"></td>
+        <td class="text-center"></td>
+        <td class="text-center"></td>
+        <td class="text-center"></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div class="btn-toolbar" role="toolbar">
+    <button class="btn btn-primary" data-toggle="modal" data-target="#discipline-modal">Добавить дисциплину</button>
+  </div>
+  
+  <div class="modal fade" id="discipline-modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form role="form">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Добавление аттестационного испытания</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="discipline-field">Дисциплина</label>
+              <input type="email" class="form-control" id="discipline-field" placeholder="">
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Экзамен
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Пересдача экзамена
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Комиссия по экзамену
+              </label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+            <button type="button" class="btn btn-primary">Добавить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render :partial => "footer" %>

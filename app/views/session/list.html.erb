@@ -1,0 +1,38 @@
+<%= render :partial => "header", :locals => { :current_page => 'list' } %>
+
+<div class="container">
+  <h1>Зимняя промежуточная аттестация 2013/2014 года</h1>
+  
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Курс</th>
+        <th>Уровень</th>
+        <th>Форма</th>
+        <th>Направление/специальность</th>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+    <% (1..5).each do |n| %>
+      <tr>
+        <td>1 курс</td>
+        <td>Бакалавриат</td>
+        <td>Очная</td>
+        <td>032700 "Филология", профиль "Английский язык и литература"</td>
+        <td>
+          <button class="btn btn-xs btn-info">Группы</button>
+          <button class="btn btn-xs btn-info">Испытания</button>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  
+  <div class="btn-toolbar" role="toolbar">
+    <button class="btn btn-primary">Добавить расписание</button>
+  </div>
+</div>
+
+<%= render :partial => "footer" %>
