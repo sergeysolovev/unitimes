@@ -1,7 +1,15 @@
-en:
+ru:
   simple_form:
     "yes": 'Да'
     "no": 'Нет'
+    labels:
+      user:
+        name: 'Имя пользователя'
+        email: 'Эл. почта'
+        password: 'Пароль'
+        password_confirmation: 'Пароль еще раз'
+        current_password: 'Текущий пароль'
+        remember_me: 'Запомнить меня'
     required:
       text: 'обязательно'
       mark: '*'
