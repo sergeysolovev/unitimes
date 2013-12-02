@@ -4,6 +4,6 @@ Unitimes::Application.routes.draw do
   get "session/tests"
   get "session/timetable"
   root :to => "home#index"
-  devise_for :users, :controllers => {:registrations => "registrations"}
+  devise_for :users, :controllers => {:registrations => "registrations", :passwords => "passwords"}
   resources :users
 end
