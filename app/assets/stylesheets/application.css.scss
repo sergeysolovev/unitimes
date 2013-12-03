@@ -11,3 +11,63 @@
  *= require_self
  *= require_tree .
  */
+ 
+body {
+  padding-top: 80px;
+}
+
+
+dl {
+  dd {
+    margin-left: 0;
+  }
+}
+
+.auth-forms-wrapper {
+  margin: 20px auto 40px;
+  max-width: 600px;
+  
+  h2 {
+    margin-top: 0;
+  }
+  
+  form {
+    label {
+      abbr {
+        border-bottom: none;
+        float: right;
+        margin-left: .25em;
+      }
+    }
+    
+    .has-error {
+      .help-inline.error {
+        color: #b94a48;
+      }
+    }
+    
+    .form-group {
+      .checkbox {
+        label {
+          .form-control {
+            width: auto;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+  
+  .auth-forms-links {
+    span {
+      &:after {
+        content: ' ·';
+      }
+      &:last-child {
+        &:after {
+          content: '';
+        }
+      }
+    }
+  }
+}

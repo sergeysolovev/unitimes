@@ -1,6 +1,5 @@
 <h3>Пользователи</h3>
-<div class="span8">
-<table class="table table-condensed">
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Имя пользователя</th>
@@ -22,9 +21,8 @@
         <a data-toggle="modal" href="#role-options-<%= user.id %>" class="btn btn-mini" type="button">Изменить роль</a>
         <%= render user %>
       </td>
-      <td><%= link_to("Delete user", user_path(user), :data => { :confirm => "Вы уверены?" }, :method => :delete, :class => 'btn btn-mini') unless user == current_user %></td>
+      <td><%= link_to("Удалить", user_path(user), :data => { :confirm => "Вы уверены?" }, :method => :delete, :class => 'btn btn-mini') unless user == current_user %></td>
     </tr>
   <% end %>
   </tbody>
 </table>
-</div>

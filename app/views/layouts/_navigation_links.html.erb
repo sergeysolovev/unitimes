@@ -1,4 +1,11 @@
-<%# add navigation links to this file %>
+<% if user_signed_in? %>
+<li><a href="/session/list">Список расписаний</a></li>
+<li><a href="/session/timetable">Расписание</a></li>
+<li><a href="/session/tests">Аттестационные испытания</a></li>
+<li><a href="/session/groups">Группы</a></li>
+<% end %>
+</ul>
+<ul class="nav navbar-nav navbar-right">
 <% if user_signed_in? %>
   <li><%= link_to 'Выйти', destroy_user_session_path, :method=>'delete' %></li>
 <% else %>
@@ -11,13 +18,6 @@
 <% end %>
 <% if user_signed_in? %>
   <% if current_user.has_role? :admin %>
-    <li><%= link_to 'Admin', users_path %></li>
+    <li class="pull-right"><%= link_to 'Админ', users_path %></li>
   <% end %>
-<% end %>
-
-<% if user_signed_in? %>
-<li><a href="/session/list">Список расписаний</a></li>
-<li><a href="/session/timetable">Расписание</a></li>
-<li><a href="/session/tests">Аттестационные испытания</a></li>
-<li><a href="/session/groups">Группы</a></li>
 <% end %>

@@ -1,11 +1,23 @@
-<h2>Регистрация</h2>
-<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
-  <%= f.error_notification %>
-  <%= display_base_errors resource %>
-  <%= f.input :name, :autofocus => true %>
-  <%= f.input :email, :required => true %>
-  <%= f.input :password, :required => true %>
-  <%= f.input :password_confirmation, :required => true %>
-  <%= f.button :submit, 'Зарегистрироваться', :class => 'btn-primary' %>
-<% end %>
-<%= render "devise/shared/links" %>
+<div class="well auth-forms-wrapper">
+  <h2>Регистрация</h2>
+  <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
+    <%= f.error_notification %>
+    <%= display_base_errors resource %>
+    <div class="form-group">
+    <%= f.input :name, :autofocus => true %>
+    </div>
+    <div class="form-group">
+    <%= f.input :email, :required => true %>
+    </div>
+    <div class="form-group">
+    <%= f.input :password, :required => true %>
+    </div>
+    <div class="form-group">
+    <%= f.input :password_confirmation, :required => true %>
+    </div>
+    <div class="form-group">
+    <%= f.button :submit, 'Зарегистрироваться', :class => 'btn-primary' %>
+    </div>
+  <% end %>
+  <%= render "devise/shared/links" %>
+</div>

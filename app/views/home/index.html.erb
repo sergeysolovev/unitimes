@@ -1,4 +1,9 @@
-<h3>Главная</h3>
-<% @users.each do |user| %>
-  <p>Пользователь: <%=link_to user.name, user %></p>
-<% end %>
+<div class="well auth-forms-wrapper">
+  <h2>Главная</h2>
+  <dl>
+  <% @users.each do |user| %>
+    <dt>Пользователь</dt>
+    <dd><%=link_to user.name, user %></dd>
+  <% end %>
+  </dl>
+</div>
