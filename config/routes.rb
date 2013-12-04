@@ -1,4 +1,6 @@
 Unitimes::Application.routes.draw do
+  resources :groups
+
   get "session/list"
   get "session/groups"
   get "session/tests"

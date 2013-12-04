@@ -1,0 +1,30 @@
+<h1>Зимняя промежуточная аттестация 2013/2014 года</h1>
+<h3>Перечень групп</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Группа</th>
+      <th>Образовательная программа</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @groups.each do |group| %>
+      <tr>
+        <td><%= group.name %></td>
+        <td><%= group.educationProgram_id %></td>
+        <td><%= link_to 'Show', group %></td>
+        <td><%= link_to 'Edit', edit_group_path(group) %></td>
+        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Создать новую группу', new_group_path %>
