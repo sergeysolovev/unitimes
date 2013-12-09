@@ -1,4 +1,6 @@
 Unitimes::Application.routes.draw do
+  resources :education_programs
+
   resources :groups
 
   get "session/list"

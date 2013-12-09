@@ -1,0 +1,33 @@
+<h1>Listing education_programs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Курс</th>
+      <th>Уровень</th>
+      <th>Форма</th>
+      <th>Направление/специальность</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @education_programs.each do |education_program| %>
+      <tr>
+        <td><%= education_program.course %></td>
+        <td><%= education_program.educationLevel %></td>
+        <td><%= education_program.educationForm %></td>
+        <td><%= education_program.name %></td>
+        <td><%= link_to 'Show', education_program %></td>
+        <td><%= link_to 'Edit', edit_education_program_path(education_program) %></td>
+        <td><%= link_to 'Destroy', education_program, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Education program', new_education_program_path %>

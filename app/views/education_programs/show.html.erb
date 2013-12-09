@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @education_program.course %>
+</p>
+
+<p>
+  <strong>Educationlevel:</strong>
+  <%= @education_program.educationLevel %>
+</p>
+
+<p>
+  <strong>Educationform:</strong>
+  <%= @education_program.educationForm %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @education_program.name %>
+</p>
+
+<%= link_to 'Edit', edit_education_program_path(@education_program) %> |
+<%= link_to 'Back', education_programs_path %>
