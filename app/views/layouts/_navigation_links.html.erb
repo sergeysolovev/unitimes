@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-<li><a href="/session/list">Список расписаний</a></li>
+<li><%= link_to 'Список расписаний', education_programs_path %></li>
 <li><a href="/session/timetable">Расписание</a></li>
 <li><a href="/session/tests">Аттестационные испытания</a></li>
 <li><a href="/groups">Группы</a></li>

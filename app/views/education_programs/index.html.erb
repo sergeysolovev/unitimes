@@ -1,6 +1,6 @@
-<h1>Listing education_programs</h1>
+<h1>Зимняя промежуточная аттестация 2013/2014 года</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Курс</th>
@@ -10,6 +10,7 @@
       <th></th>
       <th></th>
       <th></th>
+      <th>&nbsp;</th>
     </tr>
   </thead>
 
@@ -23,6 +24,10 @@
         <td><%= link_to 'Show', education_program %></td>
         <td><%= link_to 'Edit', edit_education_program_path(education_program) %></td>
         <td><%= link_to 'Destroy', education_program, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <button class="btn btn-xs btn-info">Группы</button>
+          <button class="btn btn-xs btn-info">Испытания</button>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +35,6 @@
 
 <br>
 
-<%= link_to 'New Education program', new_education_program_path %>
+<div class="btn-toolbar" role="toolbar">
+    <%= button_to 'Добавить расписание', new_education_program_path, :class => "btn btn-primary", :method => :get  %>
+</div>
