@@ -12,11 +12,11 @@
   </thead>
 
   <tbody>
-    <% @education_programs.each do |education_program| %>
+    <% @education_programs.order('"educationForm_id" ASC, "educationLevel_id" ASC, course ASC, name ASC').each do |education_program| %>
       <tr>
         <td><%= education_program.course %></td>
-        <td><%= education_program.educationLevel %></td>
-        <td><%= education_program.educationForm %></td>
+        <td><%= EducationLevel.find(education_program.educationLevel_id).name %></td>
+        <td><%= EducationForm.find(education_program.educationForm_id).name %></td>
         <td><%= education_program.name %></td>
         <td>
           <button class="btn btn-xs btn-info">Группы</button>
@@ -33,7 +33,7 @@
 <br>
 
 <div class="btn-toolbar" role="toolbar">
-  <button class="btn btn-primary" data-toggle="modal" data-target="#new-education-program-modal"><i class="glyphicon glyphicon-plus-sign"></i> Добавить образовательную программу</button>
+  <button class="btn btn-primary" data-toggle="modal" data-target="#new-education-program-modal"><i class="glyphicon glyphicon-plus-sign"></i> Добавить расписание</button>
 </div>
 
 <div class="modal fade" id="new-education-program-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -41,7 +41,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Добавление образовательной программы</h4>
+        <h4 class="modal-title">Создание нового расписания</h4>
       </div>
     <%= simple_form_for(@education_program, :html => {:class => 'form-vertical' }) do |f| %>
       <div class="modal-body">
@@ -49,17 +49,19 @@
         <%= f.input :course %>
         </div>
         <div class="form-group">
-        <%= f.input :educationLevel %>
+        <%= f.label :educationLevel_id, "Уровень обучения" %>
+        <%= f.select :educationLevel_id, options_from_collection_for_select(EducationLevel.all, 'id', 'name') %>
         </div>
         <div class="form-group">
-        <%= f.input :educationForm %>
+        <%= f.label :educationForm_id, "Форма обучения" %>
+        <%= f.select :educationForm_id, options_from_collection_for_select(EducationForm.all, 'id', 'name') %>
         </div>
         <div class="form-group">
         <%= f.input :name %>
         </div>
       </div>
       <div class="modal-footer">
-        <%= f.button :submit, "Создать образовательную программу", :class => 'btn btn-primary' %>
+        <%= f.button :submit, "Создать расписание", :class => 'btn btn-primary' %>
         <button type="button" class="btn btn-link" data-dismiss="modal">Закрыть</button>
       </div>
     <% end %>

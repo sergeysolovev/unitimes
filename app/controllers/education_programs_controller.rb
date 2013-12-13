@@ -29,7 +29,7 @@ class EducationProgramsController < ApplicationController
 
     respond_to do |format|
       if @education_program.save
-        format.html { redirect_to @education_program, notice: 'Education program was successfully created.' }
+        format.html { redirect_to @education_program, notice: 'Новое расписание успешно добавлено.' }
         format.json { render action: 'show', status: :created, location: @education_program }
       else
         format.html { render action: 'new' }
@@ -43,7 +43,7 @@ class EducationProgramsController < ApplicationController
   def update
     respond_to do |format|
       if @education_program.update(education_program_params)
-        format.html { redirect_to @education_program, notice: 'Education program was successfully updated.' }
+        format.html { redirect_to @education_program, notice: 'Свойства расписания успешно отредактированы.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -70,6 +70,6 @@ class EducationProgramsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def education_program_params
-      params.require(:education_program).permit(:course, :educationLevel, :educationForm, :name)
+      params.require(:education_program).permit(:course, :educationLevel_id, :educationForm_id, :name)
     end
 end

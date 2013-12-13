@@ -5,16 +5,16 @@
   <%= f.input :course %>
   </div>
   <div class="form-group">
-  <%= f.input :educationLevel %>
+  <%= f.select :educationLevel_id, options_from_collection_for_select(EducationLevel.all, 'id', 'name') %>
   </div>
   <div class="form-group">
-  <%= f.input :educationForm %>
+  <%= f.select :educationForm_id, options_from_collection_for_select(EducationForm.all, 'id', 'name') %>
   </div>
   <div class="form-group">
   <%= f.input :name %>
   </div>  
   <div class="form-group">
-  <%= f.button :submit, :is_edit_form ? "Сохранить изменения" : "Создать образовательную программу", :class => 'btn btn-primary' %>
+  <%= f.button :submit, :is_edit_form ? "Сохранить изменения" : "Создать расписание", :class => 'btn btn-primary' %>
   <% if :is_edit_form %>
     <%= link_to 'Посмотреть подробности', @education_program, :class => 'btn btn-link' %>
     <%= link_to 'Вернуться к списку', education_programs_path, :class => 'btn btn-link' %>

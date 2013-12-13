@@ -1,1 +1,1 @@
-json.extract! @education_program, :course, :educationLevel, :educationForm, :name, :created_at, :updated_at
+json.extract! @education_program, :course, :educationLevel_id, :educationForm_id, :name, :created_at, :updated_at

@@ -1,0 +1,27 @@
+<h1>Listing education_forms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @education_forms.each do |education_form| %>
+      <tr>
+        <td><%= education_form.name %></td>
+        <td><%= link_to 'Show', education_form %></td>
+        <td><%= link_to 'Edit', edit_education_form_path(education_form) %></td>
+        <td><%= link_to 'Destroy', education_form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Education form', new_education_form_path %>

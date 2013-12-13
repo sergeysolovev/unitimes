@@ -8,12 +8,12 @@
   
   <p>
     <strong>Уровень:</strong>
-    <%= @education_program.educationLevel %>
+    <%= EducationLevel.find(@education_program.educationLevel_id).name %>
   </p>
   
   <p>
     <strong>Форма:</strong>
-    <%= @education_program.educationForm %>
+    <%= EducationForm.find(@education_program.educationForm_id).name %>
   </p>
   
   <p>

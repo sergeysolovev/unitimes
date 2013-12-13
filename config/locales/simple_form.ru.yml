@@ -12,8 +12,8 @@ ru:
         remember_me: 'Запомнить меня'
       education_program:
         course: 'Курс'
-        educationLevel: 'Уровень'
-        educationForm: 'Форма'
+        educationLevel_id: 'Уровень'
+        educationForm_id: 'Форма'
         name: 'Направление/специальность'
     required:
       text: 'обязательно'
