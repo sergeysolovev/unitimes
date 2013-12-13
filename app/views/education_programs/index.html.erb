@@ -7,9 +7,6 @@
       <th>Уровень</th>
       <th>Форма</th>
       <th>Направление/специальность</th>
-      <th></th>
-      <th></th>
-      <th></th>
       <th>&nbsp;</th>
     </tr>
   </thead>
@@ -21,12 +18,12 @@
         <td><%= education_program.educationLevel %></td>
         <td><%= education_program.educationForm %></td>
         <td><%= education_program.name %></td>
-        <td><%= link_to 'Show', education_program %></td>
-        <td><%= link_to 'Edit', edit_education_program_path(education_program) %></td>
-        <td><%= link_to 'Destroy', education_program, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td>
           <button class="btn btn-xs btn-info">Группы</button>
           <button class="btn btn-xs btn-info">Испытания</button>
+          <%= link_to raw('<i class="glyphicon glyphicon-list"></i>'), education_program, class: 'btn btn-default btn-xs', title: 'Посмотреть подробности' %>
+          <%= link_to raw('<i class="glyphicon glyphicon-pencil"></i>'), edit_education_program_path(education_program), class: 'btn btn-default btn-xs', title: 'Редактировать' %>
+          <%= link_to raw('<i class="glyphicon glyphicon-remove"></i>'), education_program, class: 'btn btn-default btn-xs', method: :delete, data: { confirm: 'Вы уверены?' }, title: 'Удалить' %>
         </td>
       </tr>
     <% end %>

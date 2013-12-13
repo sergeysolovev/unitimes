@@ -14,6 +14,10 @@
   <%= f.input :name %>
   </div>  
   <div class="form-group">
-  <%= f.button :submit, "Создать образовательную программу", :class => 'btn btn-primary' %>
+  <%= f.button :submit, :is_edit_form ? "Сохранить изменения" : "Создать образовательную программу", :class => 'btn btn-primary' %>
+  <% if :is_edit_form %>
+    <%= link_to 'Посмотреть подробности', @education_program, :class => 'btn btn-link' %>
+    <%= link_to 'Вернуться к списку', education_programs_path, :class => 'btn btn-link' %>
+  <% end %>
   </div>
 <% end %>
