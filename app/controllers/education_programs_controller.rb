@@ -4,6 +4,7 @@ class EducationProgramsController < ApplicationController
   # GET /education_programs
   # GET /education_programs.json
   def index
+    @education_program = EducationProgram.new
     @education_programs = EducationProgram.all
   end
 

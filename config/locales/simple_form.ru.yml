@@ -10,6 +10,11 @@ ru:
         password_confirmation: 'Пароль еще раз'
         current_password: 'Текущий пароль'
         remember_me: 'Запомнить меня'
+      education_program:
+        course: 'Курс'
+        educationLevel: 'Уровень'
+        educationForm: 'Форма'
+        name: 'Направление/специальность'
     required:
       text: 'обязательно'
       mark: '*'

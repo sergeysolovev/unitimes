@@ -1,19 +1,19 @@
-<%= simple_form_for(@education_program) do |f| %>
+<%= simple_form_for(@education_program, :html => {:class => 'form-vertical' }) do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
-
-    <%= f.input :course %>
-
-    <%= f.input :educationLevel %>
-
-    <%= f.input :educationForm %>
-
-    <%= f.input :name %>
-
+  
+  <div class="form-group">
+  <%= f.input :course %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+  <%= f.input :educationLevel %>
+  </div>
+  <div class="form-group">
+  <%= f.input :educationForm %>
+  </div>
+  <div class="form-group">
+  <%= f.input :name %>
+  </div>  
+  <div class="form-group">
+  <%= f.button :submit, "Создать образовательную программу", :class => 'btn btn-primary' %>
   </div>
 <% end %>
