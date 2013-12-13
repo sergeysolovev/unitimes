@@ -23,7 +23,8 @@ dl {
   }
 }
 
-.auth-forms-wrapper {
+.auth-forms-wrapper,
+.gray-centered-wrapper {
   margin: 20px auto 40px;
   max-width: 600px;
   
@@ -74,4 +75,17 @@ dl {
 
 .modal-content .modal-footer {
   text-align: left;
+}
+
+a.btn {
+  color: #fff !important;
+  text-decoration: none;
+  
+  &.btn-link {
+    color: #428BCA !important;
+  }
+  
+  &.btn-default {
+    color: #333 !important;
+  }
 }

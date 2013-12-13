@@ -1,24 +1,26 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Course:</strong>
-  <%= @education_program.course %>
-</p>
-
-<p>
-  <strong>Educationlevel:</strong>
-  <%= @education_program.educationLevel %>
-</p>
-
-<p>
-  <strong>Educationform:</strong>
-  <%= @education_program.educationForm %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @education_program.name %>
-</p>
-
-<%= link_to 'Edit', edit_education_program_path(@education_program) %> |
-<%= link_to 'Back', education_programs_path %>
+<div class="well gray-centered-wrapper">
+  <h2>Подробная информация о расписании</h2>
+  
+  <p>
+    <strong>Курс:</strong>
+    <%= @education_program.course %>
+  </p>
+  
+  <p>
+    <strong>Уровень:</strong>
+    <%= @education_program.educationLevel %>
+  </p>
+  
+  <p>
+    <strong>Форма:</strong>
+    <%= @education_program.educationForm %>
+  </p>
+  
+  <p>
+    <strong>Направление/специальность:</strong>
+    <%= @education_program.name %>
+  </p>
+  
+  <%= link_to 'Редактировать', edit_education_program_path(@education_program), :class => 'btn btn-primary' %>
+  <%= link_to 'Вернуться к списку', education_programs_path, :class => 'btn btn-link' %>
+</div>
