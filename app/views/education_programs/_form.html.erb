@@ -9,10 +9,10 @@
     <%= f.input :course %>
     </div>
     <div class="form-group">
-    <%= f.select :educationLevel_id, options_from_collection_for_select(EducationLevel.all, 'id', 'name'), {}, { :class => 'form-control' } %>
+    <%= f.select :educationLevel_id, options_from_collection_for_select(EducationLevel.all, 'id', 'name', @education_program.educationLevel_id), {}, { :class => 'form-control' } %>
     </div>
     <div class="form-group">
-    <%= f.select :educationForm_id, options_from_collection_for_select(EducationForm.all, 'id', 'name'), {}, { :class => 'form-control' } %>
+    <%= f.select :educationForm_id, options_from_collection_for_select(EducationForm.all, 'id', 'name', @education_program.educationForm_id), {}, { :class => 'form-control' } %>
     </div>
     <div class="form-group">
     <%= f.input :name %>
