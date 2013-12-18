@@ -1,23 +1,36 @@
 <%= simple_form_for(@education_program, :html => {:class => 'form-vertical' }) do |f| %>
-  <%= f.error_notification %>
-  
-  <div class="form-group">
-  <%= f.input :course %>
-  </div>
-  <div class="form-group">
-  <%= f.select :educationLevel_id, options_from_collection_for_select(EducationLevel.all, 'id', 'name') %>
-  </div>
-  <div class="form-group">
-  <%= f.select :educationForm_id, options_from_collection_for_select(EducationForm.all, 'id', 'name') %>
-  </div>
-  <div class="form-group">
-  <%= f.input :name %>
-  </div>  
-  <div class="form-group">
-  <%= f.button :submit, :is_edit_form ? "Сохранить изменения" : "Создать расписание", :class => 'btn btn-primary' %>
-  <% if :is_edit_form %>
-    <%= link_to 'Посмотреть подробности', @education_program, :class => 'btn btn-link' %>
-    <%= link_to 'Вернуться к списку', education_programs_path, :class => 'btn btn-link' %>
+  <% if local_assigns.has_key? :is_modal_form %>
+    <div class="modal-body">
+  <% else %>
+    <%= f.error_notification %>
   <% end %>
-  </div>
+  
+    <div class="form-group">
+    <%= f.input :course %>
+    </div>
+    <div class="form-group">
+    <%= f.select :educationLevel_id, options_from_collection_for_select(EducationLevel.all, 'id', 'name'), {}, { :class => 'form-control' } %>
+    </div>
+    <div class="form-group">
+    <%= f.select :educationForm_id, options_from_collection_for_select(EducationForm.all, 'id', 'name'), {}, { :class => 'form-control' } %>
+    </div>
+    <div class="form-group">
+    <%= f.input :name %>
+    </div>
+        
+  <% if local_assigns.has_key? :is_modal_form %>
+    </div>
+    <div class="modal-footer">
+      <%= f.button :submit, "Сохранить", :class => 'btn btn-primary' %>
+      <button type="button" class="btn btn-link" data-dismiss="modal">Закрыть</button>
+    </div>
+  <% else %>
+    <div class="form-group no-margin">
+    <%= f.button :submit, "Сохранить", :class => 'btn btn-primary' %>
+    <% if local_assigns.has_key? :is_edit_form %>
+      <%= link_to 'Посмотреть подробности', @education_program, :class => 'btn btn-link' %>
+    <% end %>
+    <%= link_to 'Вернуться к списку', education_programs_path, :class => 'btn btn-link' %>
+    </div>
+  <% end %>
 <% end %>

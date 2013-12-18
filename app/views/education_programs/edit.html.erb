@@ -1,5 +1,19 @@
 <div class="well gray-centered-wrapper">
-  <h2>Редактировать свойства расписания</h2>
+  <h2>Редактирование расписания</h2>
   
-  <%= render 'form', :locals => { :is_edit_form => true } %>
+  <%= render 'form', :is_edit_form => true %>
+</div>
+
+<div class="hide">
+  <div id="edit-modal-wrapper-<%= @education_program.id %>">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Редактирование расписания</h4>
+        </div>
+        <%= render 'form', :is_modal_form => true, :is_edit_form => true %>
+      </div>
+    </div>
+  </div>
 </div>
