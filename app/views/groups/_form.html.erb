@@ -1,9 +1,9 @@
-<%= simple_form_for(@group) do |f| %>
+<%= simple_form_for [@education_program, @group] do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.input :educationProgram_id %>
+    <%= f.input :education_program_id %>
   </div>
 
   <div class="form-actions">

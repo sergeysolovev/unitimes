@@ -1,9 +1,9 @@
 Unitimes::Application.routes.draw do
   resources :education_levels
   resources :education_forms
-  resources :education_programs
-  resources :groups
-
+  resources :education_programs do
+  	resources :groups
+  end	
   get "session/timetable"
   get "session/tests"
 

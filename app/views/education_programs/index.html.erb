@@ -19,7 +19,8 @@
         <td><%= EducationForm.find(education_program.educationForm_id).name %></td>
         <td><%= education_program.name %></td>
         <td>
-          <button class="btn btn-xs btn-info">Группы</button>
+          <%= link_to "Группы", education_program_groups_path(education_program), :class => "btn btn-xs btn-info"  %>
+          
           <button class="btn btn-xs btn-info">Испытания</button>
           <%= link_to raw('<i class="glyphicon glyphicon-list"></i>'), education_program, class: 'btn btn-default btn-xs', title: 'Посмотреть подробности' %>
           <%=
