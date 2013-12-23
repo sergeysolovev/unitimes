@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :set_education_program
   before_action :set_group, only: [:show, :edit, :update, :destroy]
 
   # GET /groups
@@ -14,7 +15,6 @@ class GroupsController < ApplicationController
 
   # GET /groups/new
   def new
-    @education_program = EducationProgram.find(params[:education_program_id])
     @group = Group.new
   end
 
@@ -26,7 +26,7 @@ class GroupsController < ApplicationController
   # POST /groups.json
   def create
     @group = Group.new(group_params)
-
+    @group.education_program_id = @education_program.id
     respond_to do |format|
       if @group.save
         format.html { redirect_to education_program_groups_url, notice: 'Группа добавлена.' }
@@ -67,6 +67,10 @@ class GroupsController < ApplicationController
     def set_group
       @group = Group.find(params[:id])
     end
+
+    def set_education_program
+      @education_program = EducationProgram.find(params[:education_program_id])
+    end  
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def group_params

@@ -34,12 +34,6 @@ ActiveRecord::Schema.define(version: 20131218140517) do
     t.datetime "updated_at"
   end
 
-  create_table "education_program_groups", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "education_programs", force: true do |t|
     t.string   "course"
     t.string   "educationLevel"
@@ -67,7 +61,7 @@ ActiveRecord::Schema.define(version: 20131218140517) do
 
   create_table "groups", force: true do |t|
     t.string   "name"
-    t.string   "education_program_id"
+    t.integer  "education_program_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

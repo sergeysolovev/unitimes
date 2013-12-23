@@ -1,11 +1,11 @@
 <h1>Зимняя промежуточная аттестация 2013/2014 года</h1>
-<h3>Перечень групп</h3>
+<h3><%= @education_program.name %></h3>
 
 <table>
   <thead>
     <tr>
-      <th>Группа</th>
-      <th>Образовательная программа</th>
+      <th>Группы</th>
+      <th></th>
     </tr>
   </thead>
 
@@ -13,7 +13,7 @@
     <% @groups.each do |group| %>
       <tr>
         <td><%= group.name %></td>
-        <td><%= group.education_program_id %></td>
+        <td><%= link_to raw('<i class="glyphicon glyphicon-remove"></i>'), [@education_program, group], class: 'btn btn-default btn-xs', method: :delete, data: { confirm: 'Вы уверены?' }, title: 'Удалить' %></td>
       </tr>
     <% end %>
   </tbody>
