@@ -1,5 +1,5 @@
 <h1>Зимняя промежуточная аттестация 2013/2014 года</h1>
-<h3><%= @education_program.name %></h3>
+<h3><%= @education_program.course %> &emsp; <%= EducationLevel.find(@education_program.educationLevel_id).name %> &emsp; <%= EducationForm.find(@education_program.educationForm_id).name %> &emsp; <%= @education_program.name %></h3>
 
 <table>
   <thead>

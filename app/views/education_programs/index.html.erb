@@ -12,7 +12,7 @@
   </thead>
 
   <tbody>
-    <% @education_programs.order('"educationForm_id" ASC, "educationLevel_id" ASC, course ASC, name ASC').each do |education_program| %>
+    <% @education_programs.each do |education_program| %>
       <tr>
         <td><%= education_program.course %></td>
         <td><%= EducationLevel.find(education_program.educationLevel_id).name %></td>

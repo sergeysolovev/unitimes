@@ -1,0 +1,35 @@
+<h1>Зимняя промежуточная аттестация 2013/2014 года</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Курс</th>
+      <th>Уровень</th>
+      <th>Форма</th>
+      <th>Направление/специальность</th>
+      <th>Список групп</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @education_programs.each do |education_program| %>
+      <tr>
+        <td><%= education_program.course %></td>
+        <td><%= EducationLevel.find(education_program.educationLevel_id).name %></td>
+        <td><%= EducationForm.find(education_program.educationForm_id).name %></td>
+        <td><%= education_program.name %></td>
+        <td>
+          <% education_program.groups.each do |group| %>
+            <%= group.name %><br>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to "Редактировать", education_program_groups_path(education_program), :class => "btn btn-xs btn-info"  %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

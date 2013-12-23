@@ -4,4 +4,9 @@ class SessionController < ApplicationController
 
   def tests
   end
+
+  def groups
+  	@education_programs = EducationProgram.all
+  	@groups = Group.all
+  end
 end
