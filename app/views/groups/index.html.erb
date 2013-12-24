@@ -1,24 +1,32 @@
-<h1>Зимняя промежуточная аттестация 2013/2014 года</h1>
-<h3><%= @education_program.course %> &emsp; <%= EducationLevel.find(@education_program.educationLevel_id).name %> &emsp; <%= EducationForm.find(@education_program.educationForm_id).name %> &emsp; <%= @education_program.name %></h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Группы</th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @groups.each do |group| %>
+<div id="groups-table-wrapper">
+  <table class="table table-striped" id="groups-table">
+    <thead>
       <tr>
-        <td><%= group.name %></td>
-        <td><%= link_to raw('<i class="glyphicon glyphicon-remove"></i>'), [@education_program, group], class: 'btn btn-default btn-xs', method: :delete, data: { confirm: 'Вы уверены?' }, title: 'Удалить' %></td>
+        <th>Группы</th>
+        <th> </th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+  
+    <tbody>
+      <% @groups.each do |group| %>
+        <tr>
+          <td><%= group.name %></td>
+          <td><%= link_to raw('<i class="glyphicon glyphicon-remove"></i>'), [@education_program, group], class: 'btn btn-default btn-xs', method: :delete, data: { confirm: 'Вы уверены?' }, title: 'Удалить' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= form_for([@education_program, Group.new], { :html => { :class => 'form-inline', :id => 'create-new-group-form-ajax' } }) do |f| %>
+  <div class="form-group" style="width: 100%">
+    <%= f.text_field :name, :label => false, :placeholder => 'Название новой группы', :class => 'form-control', :style => 'width: 300px;' %>
+    <%= f.submit 'Создать группу', :class => 'btn btn-primary' %>
+  </div>
+<% end %>
 
 <br>
 
-<%= link_to 'Создать новую группу', new_education_program_group_path %>
+<%=
+#link_to 'Создать новую группу', new_education_program_group_path
+%>
