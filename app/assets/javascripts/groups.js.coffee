@@ -27,11 +27,14 @@ createNewGroupForm = ->
     off
     
   validateForm = ()->
-    $input.val() != ''
+    $.trim($input.val()) != ''
+    
   $input.keypress(()->
     $(@).parent().removeClass('has-error')
   )
+  
   $submit.data('oldtext', $submit.attr('value'))
+  
   $form.submit (e)->
     e.preventDefault()
     if validateForm()
