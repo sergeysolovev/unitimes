@@ -5,7 +5,7 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
   def index
-    @groups = Group.where(education_program_id: params[:education_program_id])
+    @groups = Group.where(educationProgram_id: params[:education_program_id])
   end
 
   # GET /groups/1
@@ -26,7 +26,7 @@ class GroupsController < ApplicationController
   # POST /groups.json
   def create
     @group = Group.new(group_params)
-    @group.education_program_id = @education_program.id
+    @group.educationProgram_id = @education_program.id
     respond_to do |format|
       if @group.save
         format.html { redirect_to education_program_groups_url, notice: 'Группа добавлена.' }
